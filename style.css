@@ -49,11 +49,10 @@ p,
 li,
 figcaption {
   text-wrap: pretty;
-  /* max-width: 55ch; */
 }
 
 /* for container queries, landmarks as containers */
-body> :is(header, footer),
+body > :is(header, footer),
 main {
   container-type: inline-size;
 }
@@ -112,7 +111,6 @@ main {
   --fs-800: 2.5rem;
   --fs-900: 3rem;
 
-
   /*** Theme setup ***/
 
   /* font family */
@@ -141,9 +139,13 @@ main {
 
   /* Spacing */
   --spacing-base: 1rem;
+  --spacing-sides: 6rem;
 
   --flow-space: 1.75em;
   --flow-space-lg: 4em;
+
+  /* Transitions */
+  --ts-quick: 0.2s;
 }
 
 /*** Global/base ***/
@@ -180,58 +182,125 @@ body {
   color: var(--clr-primary-dark);
 }
 
-
 /*** Composition ***/
-.flow>*+* {
+.flow > * + * {
   margin-block-start: var(--flow-space);
 }
 
-.flow-lg>*+* {
+.flow-lg > * + * {
   margin-block-start: var(--flow-space-lg);
 }
 
-/*
-See these for more info:
-https://www.youtube.com/watch?v=c13gpBrnGEw
-https://www.youtube.com/watch?v=cf-J4ffMBfo
-*/
-.content-grid,
-.fullwidth {
-  --_content-width: 70rem;
-  --_min-margin-width: 1rem;
+/*** Site components ***/
+/* Site header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-primary-light-1);
+  padding-inline: var(--spacing-sides);
+  position: sticky;
+  top: 0;
 
+  /* Links */
+  a {
+    transition: var(--ts-quick);
+    padding-inline: var(--spacing-base);
+    display: flex;
+
+    &:not(.logo) {
+      padding: var(--spacing-base) calc(var(--spacing-base) * 1.5);
+    }
+
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+      background-color: var(--clr-accent);
+      color: var(--clr-primary-light-1);
+      transition: var(--ts-quick);
+
+      .logo-image {
+        stroke: var(--clr-primary-light-1);
+      }
+    }
+  }
+
+  /* Site logo */
+  .logo {
+    display: flex;
+    gap: var(--spacing-base);
+
+    /* Logo svg image */
+    .logo-image {
+      width: 45px;
+      height: 45px;
+      stroke: var(--clr-accent);
+    }
+
+    /* Logo text */
+    .logo-text {
+      font-weight: var(--fw-600);
+      font-size: var(--fs-500);
+    }
+
+    span {
+      display: block;
+      line-height: 1;
+    }
+  }
+
+  /* Navigation list */
+  .primary-nav > ul {
+    display: flex;
+  }
+}
+
+/* Site content */
+.site-content > * {
+  padding-inline: var(--spacing-sides);
+}
+
+/* Card grid */
+.card-grid {
   display: grid;
-  grid-template-columns: [fullwidth-start] minmax(var(--_min-margin-width), 1fr) [content-start] min(100% - var(--_min-margin-width) * 2,
-      var(--_content-width)) [content-end] minmax(var(--_min-margin-width), 1fr) [fullwidth-end];
-  /*  grid-template-rows: [fullwidth-start] auto [fullwidth-end];*/
+  grid-template-columns: repeat(auto-fit, minmax(min(25ch), 1fr));
+  gap: var(--spacing-base);
+
+  ul {
+    list-style: none;
+  }
 }
 
-/* keep the content of the content-grid and fullwidth inside the content container */
-.content-grid>*,
-.fullwidth>* {
-  grid-column: content;
+/* Card */
+.card > article {
+  height: 100%;
+  background-color: var(--clr-primary-light-1);
+  box-shadow: var(--border-shadow);
+  margin-block-end: var(--spacing-base);
+
+  > img {
+    width: 100%;
+  }
+
+  > :not(img) {
+    margin-inline: var(--spacing-base);
+  }
+
+  .card-footer {
+    display: flex;
+
+    img {
+      border-radius: 100%;
+    }
+  }
 }
 
-/* a bit more complex but more fancy/explicit version of above */
-/*.content-grid > :not(.fullwidth),
-.fullwidth > :not(.fullwidth) {
-  grid-column: content;
-}*/
-
-/* if we have a fullwidth inside of a content-grid put this in the fullwidth container */
-.content-grid>.fullwidth {
-  grid-column: fullwidth;
+/* Aside banner */
+.aside-banner {
+  background-color: var(--clr-primary-light-1);
 }
 
-
-/*** Utilities ***/
-
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+/* Site footer */
+.site-footer {
+  padding-inline: var(--spacing-sides);
 }

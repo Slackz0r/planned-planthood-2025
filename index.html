@@ -3,27 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Page title -->
     <title>Planned Planthood</title>
   </head>
+
+  <!-- Todo: aria-label -->
+
   <body>
     <!-- Site header -->
-    <header>
+    <header class="site-header">
       <!-- Logo and company name -->
-      <div class="logo">Planned Planthood</div>
+      <a class="logo">
+        <svg
+          class="logo-image"
+          width="214"
+          height="210"
+          viewBox="0 0 214 210"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g fill="none" stroke-width="12">
+            <path
+              d="M116.833 193.533C117.406 192.909 117.969 192.279 118.522 191.645L168.173 160.226C206.289 136.107 217.36 86.0907 192.816 48.5247C189.153 42.9185 181.619 41.3343 175.976 44.905L125.764 76.6782C121.37 70.1605 116.086 64.0725 109.92 58.5872L52.4904 7.49831C46.8526 2.48295 38.1677 2.90777 33.061 8.46735C-2.89261 47.6094 0.211903 108.041 39.9737 143.413L97.4031 194.502C103.041 199.517 111.726 199.092 116.833 193.533Z"
+            />
+            <path
+              d="M115.122 194.336C115.527 193.897 115.927 193.455 116.319 193.009L153.69 169.521C182.93 151.143 191.451 112.997 172.598 84.3362C169.529 79.6722 163.25 78.3762 158.555 81.3272L121.425 104.664C118.17 100 114.303 95.6362 109.83 91.6843L66.4654 53.3677C61.8146 49.2582 54.6598 49.6021 50.4409 54.1641C22.9065 83.9378 25.2893 129.917 55.732 156.816L99.097 195.132C103.748 199.242 110.903 198.898 115.122 194.336Z"
+            />
+          </g>
+        </svg>
+
+        <p class="logo-text">PLANNED<span>PLANTHOOD</span></p>
+      </a>
 
       <!-- Navigation -->
-      <nav>
+      <nav class="primary-nav">
         <ul role="list" aria-label="Primary">
-          <li><a href="/">Hem</a></li>
-          <li><a href="/historik">Historik</a></li>
-          <li><a href="/tips">Tips</a></li>
-          <li><a href="/kontakt">Kontakt</a></li>
+          <li><a href="/">HEM</a></li>
+          <li><a href="/historik">HISTORIK</a></li>
+          <li><a href="/tips">TIPS</a></li>
+          <li><a href="/kontakt">KONTAKT</a></li>
         </ul>
       </nav>
     </header>
 
     <!-- Site content -->
-    <main>
+    <main id="content" class="site-content">
       <!-- Primary heading -->
       <h1>Våra uppskattade växter</h1>
       <!-- Info text -->
@@ -44,7 +69,7 @@
       </div>
 
       <!-- Aside banner, newsletter -->
-      <aside>
+      <aside class="aside-banner">
         <h3>Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!</h3>
 
         <!-- Sign up for newsletter -->
@@ -68,12 +93,12 @@
         <h2>Alla våra växter</h2>
 
         <!-- Card grid -->
-        <ul>
+        <ul class="card-grid" role="list">
           <!-- Card -->
-          <li>
+          <li class="card">
             <article>
               <!-- Card image -->
-              <img src="" alt="" />
+              <img src="https://picsum.photos/200?random=0" alt="" />
               <!-- Categories / tags -->
               <ul>
                 <li>
@@ -97,10 +122,13 @@
               </p>
 
               <!-- Card footer -->
-              <footer>
+              <footer class="card-footer">
                 <!-- Author -->
                 <address>
-                  <img src="" alt="" />
+                  <img
+                    src="https://randomuser.me/api/portraits/men/82.jpg"
+                    alt=""
+                  />
                   <span>Coolio</span>
                 </address>
 
@@ -109,9 +137,9 @@
             </article>
           </li>
 
-          <li>
+          <li class="card">
             <article>
-              <img src="" alt="Tomatplanta med röda tomater" />
+              <img src="https://picsum.photos/200?random=1" alt="" />
 
               <ul aria-label="Egenskaper">
                 <li>Solälskande</li>
@@ -126,9 +154,12 @@
                 riklig skörd under sommaren.
               </p>
 
-              <footer>
+              <footer class="card-footer">
                 <address>
-                  <img src="" alt="Profilbild på Anna Odlare" />
+                  <img
+                    src="https://randomuser.me/api/portraits/women/82.jpg"
+                    alt="Profilbild på Anna Odlare"
+                  />
                   <span>Anna Odlare</span>
                 </address>
                 <time datetime="2024-12-05">5 december 2024</time>
@@ -136,9 +167,9 @@
             </article>
           </li>
 
-          <li>
+          <li class="card">
             <article>
-              <img src="" alt="Röd pelargon i kruka" />
+              <img src="https://picsum.photos/200?random=11" alt="" />
 
               <ul aria-label="Egenskaper">
                 <li>Dekorativ</li>
@@ -154,9 +185,12 @@
                 sommaren.
               </p>
 
-              <footer>
+              <footer class="card-footer">
                 <address>
-                  <img src="" alt="Profilbild på Blomsterkalle" />
+                  <img
+                    src="https://randomuser.me/api/portraits/men/83.jpg"
+                    alt="Profilbild på Blomsterkalle"
+                  />
                   <span>Blomsterkalle</span>
                 </address>
                 <time datetime="2024-12-03">3 december 2024</time>
@@ -165,9 +199,9 @@
           </li>
 
           <!-- Basilika -->
-          <li>
+          <li class="card">
             <article>
-              <img src="" alt="Basilikaplanta i kruka" />
+              <img src="https://picsum.photos/200?random=2" alt="" />
 
               <ul aria-label="Egenskaper">
                 <li>Dekorativ</li>
@@ -182,9 +216,12 @@
                 ett soligt fönster.
               </p>
 
-              <footer>
+              <footer class="card-footer">
                 <address>
-                  <img src="" alt="Profilbild på Krydd-Malin" />
+                  <img
+                    src="https://randomuser.me/api/portraits/women/83.jpg"
+                    alt="Profilbild på Krydd-Malin"
+                  />
                   <span>Krydd-Malin</span>
                 </address>
                 <time datetime="2024-12-07">7 december 2024</time>
@@ -193,9 +230,9 @@
           </li>
 
           <!-- Sallad -->
-          <li>
+          <li class="card">
             <article>
-              <img src="" alt="Grön sallad som växer tätt" />
+              <img src="https://picsum.photos/200?random=3" alt="" />
 
               <ul aria-label="Egenskaper">
                 <li>Snabbväxande</li>
@@ -210,9 +247,12 @@
                 resultat för färska måltider.
               </p>
 
-              <footer>
+              <footer class="card-footer">
                 <address>
-                  <img src="" alt="Profilbild på Grönis" />
+                  <img
+                    src="https://randomuser.me/api/portraits/men/84.jpg"
+                    alt="Profilbild på Grönis"
+                  />
                   <span>Grönis</span>
                 </address>
                 <time datetime="2024-12-06">6 december 2024</time>
@@ -221,9 +261,9 @@
           </li>
 
           <!-- Ormbunke -->
-          <li>
+          <li class="card">
             <article>
-              <img src="" alt="Grön ormbunke i kruka" />
+              <img src="https://picsum.photos/200?random=4" alt="" />
 
               <ul aria-label="Egenskaper">
                 <li>Luftfuktande</li>
@@ -238,9 +278,12 @@
                 skuggiga platser.
               </p>
 
-              <footer>
+              <footer class="card-footer">
                 <address>
-                  <img src="" alt="Profilbild på Naturvännen" />
+                  <img
+                    src="https://randomuser.me/api/portraits/women/84.jpg"
+                    alt="Profilbild på Naturvännen"
+                  />
                   <span>Naturvännen</span>
                 </address>
                 <time datetime="2024-12-08">8 december 2024</time>
@@ -249,10 +292,10 @@
           </li>
 
           <!-- Gurka -->
-          <li>
+          <li class="card">
             <article>
               <!-- Card image -->
-              <img src="" alt="" />
+              <img src="https://picsum.photos/200?random=5" alt="" />
               <!-- Categories / tags -->
               <ul>
                 <li>
@@ -276,10 +319,13 @@
               </p>
 
               <!-- Card footer -->
-              <footer>
+              <footer class="card-footer">
                 <!-- Author -->
                 <address>
-                  <img src="" alt="" />
+                  <img
+                    src="https://randomuser.me/api/portraits/men/85.jpg"
+                    alt=""
+                  />
                   <span>Coolio</span>
                 </address>
 
@@ -288,9 +334,9 @@
             </article>
           </li>
 
-          <li>
+          <li class="card">
             <article>
-              <img src="" alt="Tomatplanta med röda tomater" />
+              <img src="https://picsum.photos/200?random=6" alt="" />
 
               <ul aria-label="Egenskaper">
                 <li>Solälskande</li>
@@ -305,9 +351,12 @@
                 riklig skörd under sommaren.
               </p>
 
-              <footer>
+              <footer class="card-footer">
                 <address>
-                  <img src="" alt="Profilbild på Anna Odlare" />
+                  <img
+                    src="https://randomuser.me/api/portraits/women/85.jpg"
+                    alt="Profilbild på Anna Odlare"
+                  />
                   <span>Anna Odlare</span>
                 </address>
                 <time datetime="2024-12-05">5 december 2024</time>
@@ -315,9 +364,9 @@
             </article>
           </li>
 
-          <li>
+          <li class="card">
             <article>
-              <img src="" alt="Röd pelargon i kruka" />
+              <img src="https://picsum.photos/200?random=7" alt="" />
 
               <ul aria-label="Egenskaper">
                 <li>Dekorativ</li>
@@ -333,9 +382,12 @@
                 sommaren.
               </p>
 
-              <footer>
+              <footer class="card-footer">
                 <address>
-                  <img src="" alt="Profilbild på Blomsterkalle" />
+                  <img
+                    src="https://randomuser.me/api/portraits/men/86.jpg"
+                    alt="Profilbild på Blomsterkalle"
+                  />
                   <span>Blomsterkalle</span>
                 </address>
                 <time datetime="2024-12-03">3 december 2024</time>
@@ -344,9 +396,9 @@
           </li>
 
           <!-- Basilika -->
-          <li>
+          <li class="card">
             <article>
-              <img src="" alt="Basilikaplanta i kruka" />
+              <img src="https://picsum.photos/200?random=8" alt="" />
 
               <ul aria-label="Egenskaper">
                 <li>Dekorativ</li>
@@ -361,9 +413,12 @@
                 ett soligt fönster.
               </p>
 
-              <footer>
+              <footer class="card-footer">
                 <address>
-                  <img src="" alt="Profilbild på Krydd-Malin" />
+                  <img
+                    src="https://randomuser.me/api/portraits/women/86.jpg"
+                    alt="Profilbild på Krydd-Malin"
+                  />
                   <span>Krydd-Malin</span>
                 </address>
                 <time datetime="2024-12-07">7 december 2024</time>
@@ -372,9 +427,9 @@
           </li>
 
           <!-- Sallad -->
-          <li>
+          <li class="card">
             <article>
-              <img src="" alt="Grön sallad som växer tätt" />
+              <img src="https://picsum.photos/200?random=9" alt="" />
 
               <ul aria-label="Egenskaper">
                 <li>Snabbväxande</li>
@@ -389,9 +444,12 @@
                 resultat för färska måltider.
               </p>
 
-              <footer>
+              <footer class="card-footer">
                 <address>
-                  <img src="" alt="Profilbild på Grönis" />
+                  <img
+                    src="https://randomuser.me/api/portraits/men/87.jpg"
+                    alt="Profilbild på Grönis"
+                  />
                   <span>Grönis</span>
                 </address>
                 <time datetime="2024-12-06">6 december 2024</time>
@@ -400,9 +458,9 @@
           </li>
 
           <!-- Ormbunke -->
-          <li>
+          <li class="card">
             <article>
-              <img src="" alt="Grön ormbunke i kruka" />
+              <img src="https://picsum.photos/200?random=10" alt="" />
 
               <ul aria-label="Egenskaper">
                 <li>Luftfuktande</li>
@@ -417,9 +475,12 @@
                 skuggiga platser.
               </p>
 
-              <footer>
+              <footer class="card-footer">
                 <address>
-                  <img src="" alt="Profilbild på Naturvännen" />
+                  <img
+                    src="https://randomuser.me/api/portraits/women/87.jpg"
+                    alt="Profilbild på Naturvännen"
+                  />
                   <span>Naturvännen</span>
                 </address>
                 <time datetime="2024-12-08">8 december 2024</time>
@@ -430,7 +491,7 @@
       </section>
 
       <!-- Aside banner, previous crops -->
-      <aside>
+      <aside class="aside-banner">
         <h3>Våra tidigare odlingar</h3>
 
         <p>
@@ -445,7 +506,7 @@
     </main>
 
     <!-- Site footer -->
-    <footer>
+    <footer class="site-footer">
       <h3>Om Oss</h3>
 
       <p>
@@ -465,7 +526,7 @@
 
       <!-- Footer nav -->
       <nav>
-        <ul>
+        <ul role="list">
           <li><a href="/">Hem</a></li>
           <li><a href="/historik">Historik</a></li>
           <li><a href="/tips">Tips</a></li>
